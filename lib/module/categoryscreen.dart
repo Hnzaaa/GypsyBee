@@ -150,7 +150,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                const Text('Best Selling',style: TextStyle(fontStyle: FontStyle.normal,fontWeight: FontWeight.bold,fontSize: 20,),),
                //Grid
                BlocBuilder<CategoryBloc, CategoryState>(
-                builder: (BuildContext context, state) {
+                builder: (BuildContext context, state) { 
                   // return FutureBuilder(
                   //     future: Repository()
                   //         .getcategoryab(url: 'https://dummyjson.com/products'),
@@ -164,11 +164,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
                               itemCount: state.categorymodel.products!.length,
                               scrollDirection: Axis.vertical,
                               gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 childAspectRatio: MediaQuery.of(context).size.width /(MediaQuery.of(context).size.height / 2),
                               ),
-                              itemBuilder: (BuildContext context, int index) {
+                              itemBuilder: (BuildContext context, index) {
                                 return InkWell(
                                   onTap: () {
                                     Navigator.push(

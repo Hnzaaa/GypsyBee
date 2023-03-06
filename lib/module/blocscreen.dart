@@ -26,22 +26,17 @@ class Blocscreenstate extends State<Blocscreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(title: const Text('Bloc Page'),),
       body: BlocBuilder<NewBlocBloc, NewBlocState>(
-        builder: (context, state) {
-           print("object");
-           print(state);
+        builder: (context, state) { 
           if (state is NewBlocLoaded) {  
             return Container(height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
               child: ListView.builder(
                 itemCount: state.blocmodel.length,
                 itemBuilder: (context, index) {
-                    final body = jsonDecode(state.blocmodel.toString()) as Map<String, dynamic>;
-                    final data = body["data"] as List<dynamic>;
-                    final domains = data.map((d) => (d as Map<String, dynamic>)["domains"].toString()).toList();
-                    print(domains);
-                    return const ListTile(
-                    // title: Text(''state.blocmodel),
-                    subtitle: Text(''),
+                    return   ListTile(
+                    leading: Text(state.blocmodel[index].alphaTwoCode.toString()),
+                    title: Text(state.blocmodel[index].country.toString()),
+                    subtitle: Text(state.blocmodel[index].name.toString()),
                     );
                 }),
             );
@@ -50,13 +45,13 @@ class Blocscreenstate extends State<Blocscreen> {
               //        margin: const EdgeInsets.all(8.0),
               //         child: Column(
               //              children: <Widget>[const Text('hyy'),
-              //                   Text(state.blocmodel.name![index].toString(),
+              //                   Text(state.blocmodel[index].country.toString(),
               //              style: GoogleFonts.caladea(
               //                color: const Color.fromARGB(255, 48, 48, 70),
               //                fontSize: 28,
               //                fontWeight: FontWeight.w900,
               //              ),) ,
-              //                  Text(state.blocmodel.country![index].toString(),
+              //                  Text(state.blocmodel[index].name.toString()toString(),
               //              style: GoogleFonts.cairo(
               //                color: const Color.fromARGB(255, 49, 49, 63),
               //                fontSize: 28,

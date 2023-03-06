@@ -12,6 +12,8 @@ import 'package:gypsybee/data/usdatamodel.dart';
 import 'package:gypsybee/data/usdataprovider.dart';
 import 'blocprovider.dart';
 import 'categoryprovider.dart';
+import 'cosmeticmodel.dart';
+import 'cosmeticprovider.dart';
 import 'drinksprovider.dart';
 import 'gendermodel.dart';
 import 'genderprovider.dart';
@@ -29,19 +31,18 @@ class Repository {
   var getknotprovider= KnotProvider();
   var getserviceprovider= Serviceprovider();
   var getrepairprovider=Repairprovider();
+  var getcosmeticsprovider=CosmeticProvider();
 
   Future<Categorymodel> getcategoryab({required String url}) =>
       categoryprovider.getcategory(url);
 
-  Future<Gendermodel> getgenderab(
-          {required String url, required String name}) =>
+  Future<Gendermodel> getgenderab({required String url, required String name}) =>
       genderprovider.getgender(url: url, name: name);
 
   Future<Agemodel> getageab({required String url, required String name}) =>
       ageprovider.getage(url: url, name: name);
 
-  Future<List<Blocmodel>> getblocab({required String url}) =>
-      blocprovider.getbloc(url);
+  Future<List<Blocmodel>> getblocab() => blocprovider.getbloc();
 
 
   Future<Usmodel> getdataab({  required String url,required String drilldowns, required String measures}) =>
@@ -57,6 +58,8 @@ class Repository {
       
   Future<Searchrepairmodel>getrepairab({required String url,required String id, required String sub_name})=>
   getrepairprovider.getrepair(url: url, id:id, sub_name:sub_name);
+
+  Future<List<Cosmeticmodel>> getcosmeticsab()=>getcosmeticsprovider.getcosmetics();
 
   }
   

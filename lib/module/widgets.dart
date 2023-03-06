@@ -60,4 +60,20 @@ class ServiceWidget{
     );
   }
 }
+
+class Cosmeticwidget{
+  Widget cosmeticgrid({
+    required String brand,
+    required String name, 
+    required String price,
+  }){
+    return Column(
+      children: [ 
+        Text(brand),
+        Text(name),
+        Text(price),
+      ],
+    );
+  }
+}
  

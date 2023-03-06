@@ -32,7 +32,7 @@ class _UsdataState extends State<Usdata> {
               itemCount: state.usmodel.data!.length,
               itemBuilder: (context, index) { 
                 return ListTile(
-                  title: Text(state.usmodel.data![index].year.toString(),style: GoogleFonts.b612Mono(
+                  title: Text('Year - ${state.usmodel.data![index].year}',style: GoogleFonts.b612Mono(
                   color: const Color.fromARGB(255, 155, 113, 22),
                   fontSize: 28,
                   fontWeight: FontWeight.w900,

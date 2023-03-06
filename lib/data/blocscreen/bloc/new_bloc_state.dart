@@ -21,14 +21,10 @@ class NewBlocLoading extends NewBlocState {
 
 class NewBlocLoaded extends NewBlocState {
   final  Usmodel  usmodel;
- final List<Blocmodel> blocmodel; 
-  const NewBlocLoaded(  this.usmodel,
-  this.blocmodel  
-  ); 
+  final List<Blocmodel> blocmodel; 
+  const NewBlocLoaded(  this.usmodel, this.blocmodel ); 
   @override
-  List<Object> get props => [usmodel,
-  blocmodel,
-    ];
+  List<Object> get props => [usmodel, blocmodel];
 }
 
 class NewBlocError extends NewBlocState {

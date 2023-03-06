@@ -8,7 +8,8 @@ class Restapi {
     try {
       final response = await http.get(url, headers: {
         'Accept': 'application/json',
-        'Authorization': 'Bearer $token','Charset': 'utf-8'
+        'Authorization': 'Bearer $token',
+        'Charset': 'utf-8'
       });
       // ignore: avoid_print
       print(response);

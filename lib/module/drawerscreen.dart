@@ -3,8 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gypsybee/module/blocscreen.dart';
 import 'package:gypsybee/module/drinksscreen.dart';
 import 'package:gypsybee/module/knotscreen.dart';
-import 'package:gypsybee/module/makeupscreen.dart';
-import 'package:gypsybee/module/searchservice.dart';
+import 'package:gypsybee/module/cosmeticscreen.dart';
 import 'package:gypsybee/module/servicesscreen.dart';
 import 'package:gypsybee/module/usdatascreen.dart';
 import 'gamescreen.dart';
@@ -64,7 +63,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>   const Makeupscreen()));
+                            builder: (context) => const Cosmeticscreen()));
                   },
                 ),
                 ListTile(

@@ -12,15 +12,13 @@ class NewBlocBloc extends Bloc<NewBlocEvent, NewBlocState> {
     on<NewBlocEvent>((event, emit) async {
       emit(const NewBlocLoading());
       try                  
-      {  if (event is UsdataEvent) { 
+      {  if (event is UsdataEvent) {
           var usdataresponse= await Repository()
           .getdataab(url: 'https://datausa.io/api/data',  drilldowns: 'Nation', measures: 'Population');
           var blocresponse = await Repository()
-          .getblocab(url: 'http://universities.hipolabs.com/search'); 
-               emit(NewBlocLoaded(usdataresponse,
-               blocresponse
-               ));   
-                }
+          .getblocab(); 
+          emit(NewBlocLoaded(usdataresponse, blocresponse ));   
+        }
       } catch (e) {
         emit(NewBlocError(e.toString()));
       }

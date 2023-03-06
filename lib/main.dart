@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gypsybee/data/blocscreen/bloc/new_bloc_bloc.dart';
 import 'package:gypsybee/data/categoryscreen/bloc/category_bloc.dart';
+import 'package:gypsybee/data/cosmetics/bloc/cosmetics_bloc.dart';
 import 'package:gypsybee/data/drinkscreen/bloc/drinks_bloc.dart';
 import 'package:gypsybee/data/knot/bloc/knot_bloc.dart';
 import 'package:gypsybee/data/repair/bloc/repair_bloc.dart';
@@ -16,6 +17,7 @@ void main() {
       BlocProvider(create: (BuildContext context )=> KnotBloc()),
       BlocProvider(create: (BuildContext context )=> ServiceBloc()),
       BlocProvider(create: (BuildContext context) => RepairBloc()),
+      BlocProvider(create: (BuildContext context)=>CosmeticsBloc()),
     
     ],
     child: const MyApp()));

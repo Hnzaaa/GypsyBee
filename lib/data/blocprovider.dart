@@ -2,22 +2,25 @@ import 'dart:convert';
 
 import 'package:gypsybee/data/blocmodel.dart';
 import 'bloc.dart';
+import 'package:http/http.dart' as http;
 
 class BlocProvider {
-  // Future<Blocmodel> getbloc(String url) async {
-  //   // ignore: non_constant_identifier_names
-  //   final Response = await Restapi().get(
-  //     url: Uri.parse(url),
-  //   );
-  //   return Blocmodel.fromJson(Response);
-  // }
- Future<List<Blocmodel>> getbloc(String url) async {
-  print("comes");
-    final response = await Restapi().get(
-      url: Uri.parse(url),
-    );
-  List jsonResponse = json.decode(response.body);
-  return jsonResponse.map((job) => Blocmodel.fromJson(job)).toList();
   
-}
+  Future<List<Blocmodel>> getbloc() async {
+    var url = 'http://universities.hipolabs.com/search';
+    final res = await http.get(
+      Uri.parse(url),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=utf-8',
+      },
+    );
+    if (res.statusCode == 200) {
+      List jsonResponse = json.decode(res.body); 
+      return jsonResponse
+          .map((university) =>  Blocmodel.fromJson(university))
+          .toList();
+    } else {
+      throw Exception('Failed');
+    }
+    }
 }
