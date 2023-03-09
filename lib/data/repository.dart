@@ -8,6 +8,8 @@ import 'package:gypsybee/data/repairmodel.dart';
 import 'package:gypsybee/data/repairprovider.dart';
 import 'package:gypsybee/data/servicemodel.dart';
 import 'package:gypsybee/data/serviceprovider.dart';
+import 'package:gypsybee/data/stockmodel.dart';
+import 'package:gypsybee/data/stockprovider.dart';
 import 'package:gypsybee/data/usdatamodel.dart';
 import 'package:gypsybee/data/usdataprovider.dart';
 import 'blocprovider.dart';
@@ -15,6 +17,8 @@ import 'categoryprovider.dart';
 import 'cosmeticmodel.dart';
 import 'cosmeticprovider.dart';
 import 'drinksprovider.dart';
+import 'findvendormodel.dart';
+import 'findvendorprovider.dart';
 import 'gendermodel.dart';
 import 'genderprovider.dart';
 import 'knotmodel.dart';
@@ -32,6 +36,8 @@ class Repository {
   var getserviceprovider= Serviceprovider();
   var getrepairprovider=Repairprovider();
   var getcosmeticsprovider=CosmeticProvider();
+  var getstockprovider=StockProvider();
+  var getvendorprovider=FindvendorProvider();
 
   Future<Categorymodel> getcategoryab({required String url}) =>
       categoryprovider.getcategory(url);
@@ -60,6 +66,10 @@ class Repository {
   getrepairprovider.getrepair(url: url, id:id, sub_name:sub_name);
 
   Future<List<Cosmeticmodel>> getcosmeticsab()=>getcosmeticsprovider.getcosmetics();
+
+  Future<List<Stockmodel>> getstockab()=>getstockprovider.getstock();
+
+  Future<Findvendormodel> getvendorab({required String url})=>getvendorprovider.getvendor(url: url);
 
   }
   

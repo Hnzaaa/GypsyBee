@@ -19,14 +19,18 @@ class _GamescreenState extends State<Gamescreen> {
   String Gender = "";
   String Age = "";
   var username;
+ 
   TextEditingController formcontroller = TextEditingController();
   final List<String> sizes = ["39", "40", "41", "42", "43"];
+ 
+
   @override
   Widget build(BuildContext context) {
     Widget spacer({required double height}) {
       return SizedBox(height: height);
     }
 
+ 
     return Scaffold(
       endDrawer: const DrawerScreen(),
       backgroundColor: Colors.white,
@@ -58,6 +62,20 @@ class _GamescreenState extends State<Gamescreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              // SizedBox(height: 150,
+              //   child: GridView.builder(
+              //         gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+              //              crossAxisCount: 3,
+              //              mainAxisExtent: 35,
+              //              childAspectRatio: MediaQuery.of(context).size.width /(MediaQuery.of(context).size.height / 2),
+              //            ),
+              //         itemBuilder: (BuildContext context, index){ 
+              //             return Container( 
+              //              decoration: BoxDecoration( 
+              //                border: Border.all(color: Colors.brown), 
+              //    ));
+              //         }),
+              // ),
               spacer(height: 60),
               FutureBuilder(
                 future: Repository()

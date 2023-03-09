@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gypsybee/data/repair/bloc/repair_bloc.dart';
 import 'package:gypsybee/data/repairmodel.dart';
 import 'package:gypsybee/data/repairmodel.dart';
+import 'package:gypsybee/module/findscreen.dart';
 
 import '../data/repairmodel.dart';
  
@@ -20,7 +21,7 @@ class Searchservice extends StatefulWidget {
 }
 
 class SearchserviceState extends State<Searchservice> {
-  TextEditingController searchcontroller = TextEditingController();
+  TextEditingController searchcontroller =TextEditingController();
 
   RepairBloc newbloc=RepairBloc();
   @override
@@ -70,7 +71,7 @@ class SearchserviceState extends State<Searchservice> {
                     border: OutlineInputBorder(),
                     labelText: 'Search Services'),
                 onChanged: (newvalue){
-                  setState(() {
+                  setState(() { 
                     context.read<RepairBloc>().add(RepairFetchEvent('http://ayatanacoorg.in/api/v1/saleteam/subserviceslist',widget.id.toString(),
                            newvalue.toString(),));
                   }); 
@@ -79,13 +80,24 @@ class SearchserviceState extends State<Searchservice> {
               spacer(height: 10),
               BlocBuilder<RepairBloc, RepairState>(
                 builder: (BuildContext context, state) {
-                  if(state is RepairLoaded){
-                    return Container(height: 150,
+                  if(state is RepairLoaded){ 
+                    return SizedBox(
+                      height: 150,
                       child: ListView.builder(
                         itemCount: state.repairmodel.response!.length,
                         itemBuilder: (BuildContext context, index) {
                           return ListTile(
-                            leading: Text(state.repairmodel.response![index].subName.toString(),style: const TextStyle(color: Colors.black),),
+                            selected: true, 
+                            leading: InkWell(
+                              onTap:(){
+                                setState(() {
+                                  searchcontroller.text = state.repairmodel.response![index].subName.toString();
+                                  
+                                }); 
+                               } ,
+                              child: Text(state.repairmodel.response![index].subName.toString(),
+                                                          style: const TextStyle(color: Colors.black),)
+                             ),
                           );  
                         }),
                     );
@@ -98,15 +110,20 @@ class SearchserviceState extends State<Searchservice> {
               spacer(height: 10),
               MaterialButton(
                   color: const Color.fromARGB(255, 108, 75, 161),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context, MaterialPageRoute(
+                           builder: (context)=>const Findvendor())
+                     );
+                  },
                   child: const Text(
                     'Find Vendors',
                     style: TextStyle(color: Colors.white),
                   ))
-            ],
-          ),
-        ),
-      ),
+              ],
+            ),
+         ),
+       ),
     );
   }
 }

@@ -63,12 +63,14 @@ class ServiceWidget{
 
 class Cosmeticwidget{
   Widget cosmeticgrid({
+    required String image,
     required String brand,
     required String name, 
     required String price,
   }){
     return Column(
-      children: [ 
+      children: [
+        Image.network(image) ,
         Text(brand),
         Text(name),
         Text(price),

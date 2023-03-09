@@ -36,9 +36,8 @@ class CosmeticscreenState extends State<Cosmeticscreen> {
         body: BlocBuilder<CosmeticsBloc, CosmeticsState>(
           builder: (BuildContext context, state) {  
             if(state is CosmeticsLoaded){
-               return Container(
-                height: MediaQuery.of(context).size.height,
-                width: 500,
+               return SizedBox(
+                height: MediaQuery.of(context).size.height, 
                  child: GridView.builder(
                   itemCount: state.cosmeticmodel.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -49,9 +48,10 @@ class CosmeticscreenState extends State<Cosmeticscreen> {
                   itemBuilder: (BuildContext context, index) {
                     return
                      Cosmeticwidget().cosmeticgrid(
+                          image: state.cosmeticmodel[index].imageLink.toString(),
                           name: state.cosmeticmodel[index].name.toString(),
                           brand: state.cosmeticmodel[index].brand.toString(),
-                          price: state.cosmeticmodel[index].price.toString());
+                          price: state.cosmeticmodel[index].price.toString(), );
                   }),
                );
             }

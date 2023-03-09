@@ -5,6 +5,7 @@ import 'package:gypsybee/module/drinksscreen.dart';
 import 'package:gypsybee/module/knotscreen.dart';
 import 'package:gypsybee/module/cosmeticscreen.dart';
 import 'package:gypsybee/module/servicesscreen.dart';
+import 'package:gypsybee/module/stockscreen.dart';
 import 'package:gypsybee/module/usdatascreen.dart';
 import 'gamescreen.dart';
 
@@ -60,8 +61,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   leading: const Icon(Icons.face_retouching_natural),
                   title: const Text("Cosmetics"),
                   onTap: () {
-                    Navigator.push(
-                        context,
+                    Navigator.push( context,
                         MaterialPageRoute(
                             builder: (context) => const Cosmeticscreen()));
                   },
@@ -70,8 +70,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   leading: const Icon(Icons.school),
                   title: const Text("Universities List"),
                   onTap: () {
-                    Navigator.push(
-                        context,
+                    Navigator.push( context,
                         MaterialPageRoute(
                             builder: (context) => const Blocscreen()));
                   },
@@ -80,8 +79,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   leading: const Icon(Icons.list),
                   title: const Text("USA Data"),
                   onTap: () {
-                    Navigator.push(
-                        context,
+                    Navigator.push(context,
                         MaterialPageRoute(
                             builder: (context) => const Usdata()));
                   },
@@ -90,14 +88,16 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   leading: const Icon(Icons.liquor),
                   title: const Text("Drinks"),
                   onTap: () {
-                     Navigator.push(context,MaterialPageRoute(builder: (context) => const Drinksscreeen()));
+                     Navigator.push(context,
+                     MaterialPageRoute(builder: (context) => const Drinksscreeen()));
                   },
                 ),
                 ListTile(
                   leading: const Icon(Icons.info),
                   title: const Text(" Random"),
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const KnotScreen()));
+                    Navigator.push(context,
+                     MaterialPageRoute(builder: (context)=> const KnotScreen()));
                   },
                 ),
                 ListTile(
@@ -114,6 +114,14 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => const Servicescreen()));
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.money),
+                  title: const Text("Stocks"),
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Stockscreen()));
                   },
                 ),
               ],
