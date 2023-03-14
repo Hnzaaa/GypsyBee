@@ -13,7 +13,8 @@ class FindvendorBloc extends Bloc<FindvendorEvent, FindvendorState> {
       emit(const FindvendorLoading());
       try{
          if(event is FindvendorFetchEvent){
-          var vendor=await Repository().getvendorab(url:'http://ayatanacoorg.in/api/v1/saleteam/serviceproviderslist?subservice_id=113');
+          var vendor=await Repository().getvendorab(url:'http://ayatanacoorg.in/api/v1/saleteam/serviceproviderslist',
+                                                     subservice_id: '113');
           emit(FindvendorLoaded(vendor));
          }
       }

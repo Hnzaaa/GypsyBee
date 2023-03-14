@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gypsybee/data/service/bloc/service_bloc.dart';
+import 'package:gypsybee/module/new.dart';
 import 'package:gypsybee/module/searchservice.dart';
 import 'package:gypsybee/module/widgets.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -65,11 +66,11 @@ class ServicescreenState extends State<Servicescreen> {
                          shape: RoundedRectangleBorder(
                              borderRadius: BorderRadius.circular(10.0),
                            ),
-                         builder: (context) =>   Container(height: 500,
+                         builder: (context) =>   SizedBox(height: 500,
                            child: Searchservice(
-                            icon: 'http://ayatanacoorg.in/media/attachment/${state.servicemodel.response![index].icons}'.toString(), 
-                            subject: (state.servicemodel.response![index].value).toString(),
-                            id: (state.servicemodel.response![index].id).toString()
+                              icon: 'http://ayatanacoorg.in/media/attachment/${state.servicemodel.response![index].icons}'.toString(), 
+                              subject: (state.servicemodel.response![index].value).toString(),
+                              id: (state.servicemodel.response![index].id).toString()
                            ),
                          ),
                        );
@@ -96,9 +97,12 @@ class ServicescreenState extends State<Servicescreen> {
       bottomNavigationBar: BottomNavigationBar( 
         showUnselectedLabels: true,
         iconSize: 30, 
-        items: const <BottomNavigationBarItem>[
+        items:   <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-                icon: Icon(Icons.search),
+                icon: InkWell(onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Newscreen()));
+                },child: Icon(Icons.search),),
                 label: 'Job Search', 
                 backgroundColor: Color.fromARGB(255, 18, 112, 189),
             ),

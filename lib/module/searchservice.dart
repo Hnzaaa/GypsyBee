@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gypsybee/data/repair/bloc/repair_bloc.dart';
-import 'package:gypsybee/data/repairmodel.dart';
-import 'package:gypsybee/data/repairmodel.dart';
 import 'package:gypsybee/module/findscreen.dart';
-
-import '../data/repairmodel.dart';
  
-
 class Searchservice extends StatefulWidget {
   String icon;
   String subject;
@@ -21,6 +16,7 @@ class Searchservice extends StatefulWidget {
 }
 
 class SearchserviceState extends State<Searchservice> {
+  var id;
   TextEditingController searchcontroller =TextEditingController();
 
   RepairBloc newbloc=RepairBloc();
@@ -39,16 +35,15 @@ class SearchserviceState extends State<Searchservice> {
 
     return Theme(
       data: ThemeData(canvasColor: Colors.white),
-      child: Center(
+      child: Center( 
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
-                children: [
-                  // ignore: sized_box_for_whitespace
-                  Container(
+                children: [ 
+                  SizedBox(
                     height: 40,
                     width: 40,
                     child: Image.network(
@@ -61,7 +56,7 @@ class SearchserviceState extends State<Searchservice> {
                           color: Color.fromARGB(255, 17, 95, 158),
                           fontSize: 17,
                           fontWeight: FontWeight.bold)),
-                ],
+                ],    
               ),
               spacer(height: 20),
               TextFormField(
@@ -92,12 +87,12 @@ class SearchserviceState extends State<Searchservice> {
                               onTap:(){
                                 setState(() {
                                   searchcontroller.text = state.repairmodel.response![index].subName.toString();
-                                  
+                                  id=state.repairmodel.response![index].id.toString();
                                 }); 
                                } ,
                               child: Text(state.repairmodel.response![index].subName.toString(),
-                                                          style: const TextStyle(color: Colors.black),)
-                             ),
+                                           style: const TextStyle(color: Colors.black),)
+                             ), 
                           );  
                         }),
                     );
@@ -113,7 +108,7 @@ class SearchserviceState extends State<Searchservice> {
                   onPressed: () {
                     Navigator.push(
                       context, MaterialPageRoute(
-                           builder: (context)=>const Findvendor())
+                           builder: (context)=>  Findvendor(id:id))
                      );
                   },
                   child: const Text(
@@ -127,5 +122,3 @@ class SearchserviceState extends State<Searchservice> {
     );
   }
 }
-
- 

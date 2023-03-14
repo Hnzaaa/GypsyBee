@@ -69,7 +69,8 @@ class Repository {
 
   Future<List<Stockmodel>> getstockab()=>getstockprovider.getstock();
 
-  Future<Findvendormodel> getvendorab({required String url})=>getvendorprovider.getvendor(url: url);
+  Future<Findvendormodel> getvendorab({required String url, required String subservice_id})=>
+  getvendorprovider.getvendor(url: url, subservice_id: subservice_id);
 
   }
   

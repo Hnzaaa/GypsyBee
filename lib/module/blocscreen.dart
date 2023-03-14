@@ -28,7 +28,7 @@ class Blocscreenstate extends State<Blocscreen> {
       body: BlocBuilder<NewBlocBloc, NewBlocState>(
         builder: (context, state) { 
           if (state is NewBlocLoaded) {  
-            return Container(height: MediaQuery.of(context).size.height,
+            return SizedBox(height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
               child: ListView.builder(
                 itemCount: state.blocmodel.length,
