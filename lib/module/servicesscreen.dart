@@ -103,23 +103,23 @@ class ServicescreenState extends State<Servicescreen> {
                 icon: InkWell(onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Newscreen()));
-                },child: Icon(Icons.search),),
+                },child: const Icon(Icons.search),),
                 label: 'Job Search', 
-                backgroundColor: Color.fromARGB(255, 18, 112, 189),
+                backgroundColor: const Color.fromARGB(255, 18, 112, 189),
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(Icons.book),
               label: 'Applied Job', 
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(Icons.telegram),
               label: 'Messages',
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(Icons.check_box),
               label: 'Shortlisted',
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(Icons.settings),
               label: 'Services',
             ),
