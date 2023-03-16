@@ -66,7 +66,8 @@ class ServicescreenState extends State<Servicescreen> {
                          shape: RoundedRectangleBorder(
                              borderRadius: BorderRadius.circular(10.0),
                            ),
-                         builder: (context) =>   SizedBox(height: 500,
+                         builder: (context) => SizedBox(
+                          height: 500,
                            child: Searchservice(
                               icon: 'http://ayatanacoorg.in/media/attachment/${state.servicemodel.response![index].icons}'.toString(), 
                               subject: (state.servicemodel.response![index].value).toString(),

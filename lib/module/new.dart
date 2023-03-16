@@ -51,7 +51,7 @@ class NewscreenState extends State<Newscreen> {
           child: Center(
             child: Stack(
               children: [  
-                 Card(
+               Card(
                   elevation: 10,
                   color:   Colors.white,
                   clipBehavior: Clip.hardEdge,
@@ -64,7 +64,7 @@ class NewscreenState extends State<Newscreen> {
                         children: [
                         spacer(height: 2), 
                         const Padding(
-                          padding: EdgeInsets.only(left: 80),
+                          padding: EdgeInsets.only(left: 80), 
                           child: Text(
                             'name',
                             style: TextStyle(fontSize: 20,color: Color.fromARGB(255, 22, 104, 170)),
@@ -79,15 +79,17 @@ class NewscreenState extends State<Newscreen> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 80),
-                          child: Row( mainAxisAlignment: MainAxisAlignment.start,
-                                  children: const [
-                                    Icon(Icons.my_location),
-                                    Text(       
-                                       'city',
-                                       style:  TextStyle(fontSize: 20,color: Color.fromARGB(255, 25, 113, 185)),
-                                     ),
-                                  ],
+                          child: Row( 
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: const [
+                               Icon(Icons.location_on,color: Colors.blue,),
+                               Text(       
+                                  'city',
+                                  style:  TextStyle(fontSize: 20,
+                                  color: Color.fromARGB(255, 25, 113, 185)),
                                 ),
+                             ],
+                           ),
                         ), 
                        Row(
                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -110,39 +112,47 @@ class NewscreenState extends State<Newscreen> {
                            ),
                          ],
                        ),
-                    Row(
+                       Row(
                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                          children: [
                            Row(
                              mainAxisAlignment: MainAxisAlignment.start,
                              children: const [
-                               Icon(Icons.phone),
+                               Icon(Icons.phone,color: Colors.blue,),
                                Text(
                                  '  9446763107',
                                  style: TextStyle(fontSize: 20,color: Color.fromARGB(255, 22, 106, 175)),
                                ),
                              ],
                            ),
-                          OutlinedButton(
-                                   onPressed: () {},
-                                   style: OutlinedButton.styleFrom(
-                                     shape: const StadiumBorder(),side: const BorderSide(color: Colors.blue)
-                                   ),
-                                   child: const Text('Call',
-                                   style: TextStyle(fontSize: 20,color: Color.fromARGB(255, 22, 106, 175)),),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8.0),
+                            child: OutlinedButton(
+                                     onPressed: () {},
+                                     style: OutlinedButton.styleFrom(
+                                       shape: const StadiumBorder(),side: const BorderSide(color: Colors.blue)
+                                     ),
+                                     child: const Text('Call',
+                                     style: TextStyle(fontSize: 20,color: Color.fromARGB(255, 22, 106, 175)),),
+                            ),
                           )
                          ],
                        ),
                        Row(
                          mainAxisAlignment: MainAxisAlignment.start,
                              children: const [
-                               Icon(Icons.mail),
+                               Icon(Icons.mail,color: Colors.blue,),
                                Text(
                                  '  hnza@gmail.com',
                                  style: TextStyle(fontSize: 20,color: Color.fromARGB(255, 26, 117, 190)),
                                ),
                              ],
                             ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [Icon(Icons.lock_open),
+                            Text('data'),],
+                            )
                           ],
                          );
                        }, 

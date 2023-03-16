@@ -81,7 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
             options: CarouselOptions(
               height: MediaQuery.of(context).size.height,
               animateToClosest: true,
-              enlargeCenterPage: false, scrollDirection: Axis.vertical,
+              enlargeCenterPage: false, 
+              scrollDirection: Axis.vertical,
               autoPlay: true,
               // aspectRatio: 16 / 9,
               autoPlayCurve: Curves.fastOutSlowIn,

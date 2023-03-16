@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gypsybee/data/repair/bloc/repair_bloc.dart';
 import 'package:gypsybee/module/findscreen.dart';
  
@@ -17,6 +18,7 @@ class Searchservice extends StatefulWidget {
 
 class SearchserviceState extends State<Searchservice> {
   var id;
+  // bool submit = false;
   TextEditingController searchcontroller =TextEditingController();
 
   RepairBloc newbloc=RepairBloc();
@@ -25,6 +27,11 @@ class SearchserviceState extends State<Searchservice> {
     newbloc=BlocProvider.of<RepairBloc>(context);
     newbloc.add(const InitialEvent());
     super.initState();
+    // searchcontroller.addListener(() {
+    //   setState(() {
+    //     searchcontroller.text.isNotEmpty;
+    //   });
+    //  });
   }
 
   @override
@@ -67,8 +74,9 @@ class SearchserviceState extends State<Searchservice> {
                     labelText: 'Search Services'),
                 onChanged: (newvalue){
                   setState(() { 
-                    context.read<RepairBloc>().add(RepairFetchEvent('http://ayatanacoorg.in/api/v1/saleteam/subserviceslist',widget.id.toString(),
-                           newvalue.toString(),));
+                    context.read<RepairBloc>().add(RepairFetchEvent('http://ayatanacoorg.in/api/v1/saleteam/subserviceslist',
+                    widget.id.toString(),
+                    newvalue.toString(),));
                   }); 
                 },
               ),
@@ -87,7 +95,7 @@ class SearchserviceState extends State<Searchservice> {
                               onTap:(){
                                 setState(() {
                                   searchcontroller.text = state.repairmodel.response![index].subName.toString();
-                                  id=state.repairmodel.response![index].id.toString();
+                                   id=state.repairmodel.response![index].id.toString();
                                 }); 
                                } ,
                               child: Text(state.repairmodel.response![index].subName.toString(),
@@ -95,22 +103,24 @@ class SearchserviceState extends State<Searchservice> {
                              ), 
                           );  
                         }),
-                    );
+                    ); 
                   }
                   else{
-                    return const CircularProgressIndicator(strokeWidth: .8,);
+                    return const Text('');
                   }
                 },
               ),
               spacer(height: 10),
               MaterialButton(
                   color: const Color.fromARGB(255, 108, 75, 161),
-                  onPressed: () {
+                  onPressed:  () { print(id);
+                   id==null?      //conditional operator
+                   Fluttertoast.showToast(msg: 'Select subservice'): 
                     Navigator.push(
                       context, MaterialPageRoute(
                            builder: (context)=>  Findvendor(id:id))
-                     );
-                  },
+                    );
+                   },
                   child: const Text(
                     'Find Vendors',
                     style: TextStyle(color: Colors.white),

@@ -30,7 +30,7 @@ class FindvendorScreenState extends State<Findvendor> {
     return Scaffold(
           appBar: AppBar(
             title: const Text(
-              'Services',
+              'Vendors',
               style: TextStyle(color: Colors.white),
             ),
             backgroundColor: const Color.fromARGB(255, 18, 112, 189),
@@ -45,115 +45,115 @@ class FindvendorScreenState extends State<Findvendor> {
               )
             ],
           ),
-        body: BlocBuilder<FindvendorBloc, FindvendorState>(
+        body: BlocBuilder<FindvendorBloc, FindvendorState>( 
            builder: (BuildContext context, state) { 
               if(state is FindvendorLoaded){
                return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                      child: Center(
-                        child: Stack(
-                          children: [
-                             Card(
-                              color: const Color.fromARGB(255, 161, 184, 224),
-                              clipBehavior: Clip.hardEdge,
-                              child: SizedBox(
-                                height: 250,
-                                 child: ListView.builder(
-                                 itemCount: state.findvendormodel.response!.length,
-                                 itemBuilder: (BuildContext context, int index) {  
-                                 return Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                    spacer(height: 2),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 80),
-                                      child: Text(
-                                        state.findvendormodel.response![index].user!.name.toString(),
-                                        style: const TextStyle(fontSize: 25,color: Color.fromARGB(255, 22, 106, 175)),
-                                      ),
+                padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Stack(
+                      children: [
+                         Card(
+                          color: const Color.fromARGB(255, 161, 184, 224),
+                          clipBehavior: Clip.hardEdge,
+                          child: SizedBox(
+                            height: 250,
+                             child: ListView.builder(
+                             itemCount: state.findvendormodel.response!.length,
+                             itemBuilder: (BuildContext context, int index){  
+                             return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                spacer(height: 2),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 80),
+                                  child: Text(
+                                    state.findvendormodel.response![index].user!.name.toString(),
+                                    style: const TextStyle(fontSize: 25,color: Color.fromARGB(255, 22, 106, 175)),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 80),
+                                  child: Text(
+                                    state.findvendormodel.response![index].designation.toString(),
+                                    style: const TextStyle(fontSize: 25,color: Color.fromARGB(255, 22, 106, 175)),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 80),
+                                  child: Row(
+                                   mainAxisAlignment: MainAxisAlignment.start,
+                                       children: [
+                                         const Icon(Icons.location_on,color: Colors.blue,),
+                                         Text(       
+                                            state.findvendormodel.response![index].user!.city.toString(),
+                                            style:  const TextStyle(fontSize: 25,color: Color.fromARGB(255, 22, 106, 175)),
+                                          ),
+                                       ],
+                                     ),
+                                 ), 
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children:   [
+                                    Text(
+                                      state.findvendormodel.response![index].picture1.toString(), 
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 80),
-                                      child: Text(
-                                        state.findvendormodel.response![index].designation.toString(),
-                                        style: const TextStyle(fontSize: 25,color: Color.fromARGB(255, 22, 106, 175)),
-                                      ),
+                                    Text(
+                                      state.findvendormodel.response![index].picture2.toString(), 
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 80),
-                                      child: Row(
-                                       mainAxisAlignment: MainAxisAlignment.start,
-                                           children: [
-                                             const Icon(Icons.phone),
-                                             Text(       
-                                                state.findvendormodel.response![index].user!.city.toString(),
-                                                style:  const TextStyle(fontSize: 25,color: Color.fromARGB(255, 22, 106, 175)),
-                                              ),
-                                           ],
-                                         ),
-                                    ), 
-                                    Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      children:   [
-                                        Text(
-                                          state.findvendormodel.response![index].picture1.toString(),
-                                          style:  const TextStyle(fontSize: 25),
-                                        ),
-                                        Text(
-                                          state.findvendormodel.response![index].picture2.toString(),
-                                          style: const TextStyle(fontSize: 25),
-                                        ),
-                                        Text(
-                                          state.findvendormodel.response![index].picture3.toString(),
-                                          style: const TextStyle(fontSize: 25),
-                                        ),
-                                        Text(
-                                          state.findvendormodel.response![index].picture4.toString(),
-                                          style: const TextStyle(fontSize: 25),
-                                        ),
-                                      ],
+                                    Text(
+                                      state.findvendormodel.response![index].picture3.toString(), 
                                     ),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          children: [
-                                            const Icon(Icons.phone),
-                                            Text(
-                                              state.findvendormodel.response![index].user!.phone.toString(),
-                                              style: const TextStyle(fontSize: 25,color: Color.fromARGB(255, 22, 106, 175)),
-                                            ),
-                                          ],
-                                        ),
-                                       OutlinedButton(
-                                       onPressed: () {},
-                                       style: OutlinedButton.styleFrom(
-                                         shape: const StadiumBorder(),side: const BorderSide(color: Colors.blue)
-                                       ),
-                                       child: const Text('Call',
-                                       style: TextStyle(fontSize: 20,color: Color.fromARGB(255, 22, 106, 175)),),
-                                       )
-                                      ],
+                                    Text(
+                                      state.findvendormodel.response![index].picture4.toString(), 
                                     ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.start,
-                                          children: [
-                                            const Icon(Icons.mail),
-                                            Text(
-                                              state.findvendormodel.response![index].user!.email.toString(),
-                                              style: const TextStyle(fontSize: 25),
-                                            ),
-                                          ],
+                                      children: [
+                                        const Icon(Icons.phone,color: Colors.blue,),
+                                        Text(
+                                          state.findvendormodel.response![index].user!.phone.toString(),
+                                          style: const TextStyle(fontSize: 25,color: Color.fromARGB(255, 22, 106, 175)),
                                         ),
-                                     ],
-                                  );
-                                }, 
-                              ),
-                            ),
+                                      ],
+                                    ),
+                                   Padding(
+                                     padding: const EdgeInsets.only(right: 8.0),
+                                     child: OutlinedButton(
+                                     onPressed: () {},
+                                     style: OutlinedButton.styleFrom(
+                                       shape: const StadiumBorder(),side: const BorderSide(color: Colors.blue)
+                                     ),
+                                     child: const Text('Call',
+                                     style: TextStyle(fontSize: 20,color: Color.fromARGB(255, 22, 106, 175)),),
+                                     ),
+                                   )
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        const Icon(Icons.mail,color: Colors.blue,),
+                                        Text(
+                                          state.findvendormodel.response![index].user!.email.toString(),
+                                          style: const TextStyle(fontSize: 25),
+                                        ),
+                                      ],
+                                    ),
+                                 ],
+                              );
+                            }, 
                           ),
-                         const CircleAvatar( 
-                                radius: 35,
-                         ), 
+                        ),
+                      ),
+                        const CircleAvatar( 
+                               radius: 35,
+                        ), 
                        ]
                       )
                     )
