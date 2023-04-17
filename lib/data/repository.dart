@@ -73,5 +73,3 @@ class Repository {
   getvendorprovider.getvendor(url: url, subservice_id: subservice_id);
 
   }
-  
- 

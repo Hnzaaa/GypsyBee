@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'GipsyBee',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.pink,
       ),
       home: const MyHomePage(),
     );

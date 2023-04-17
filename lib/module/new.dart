@@ -1,12 +1,10 @@
 // import 'dart:ffi';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:gypsybee/data/categorymodel.dart';
-import '../data/repository.dart';
 import 'drawerscreen.dart';
-import 'homescreen.dart';
 
 class Newscreen extends StatefulWidget {
+  const Newscreen({super.key});
+
   @override
   State<Newscreen> createState() => NewscreenState();
 }

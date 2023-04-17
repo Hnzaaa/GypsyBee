@@ -4,9 +4,11 @@ import 'package:gypsybee/module/blocscreen.dart';
 import 'package:gypsybee/module/drinksscreen.dart';
 import 'package:gypsybee/module/knotscreen.dart';
 import 'package:gypsybee/module/cosmeticscreen.dart';
+import 'package:gypsybee/module/map.dart';
 import 'package:gypsybee/module/servicesscreen.dart';
 import 'package:gypsybee/module/stockscreen.dart';
 import 'package:gypsybee/module/usdatascreen.dart';
+import 'check.dart';
 import 'gamescreen.dart';
 
 class DrawerScreen extends StatefulWidget {
@@ -93,7 +95,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   },
                 ),
                 ListTile(
-                  leading: const Icon(Icons.info),
+                  leading: const Icon(Icons.perm_device_info),
                   title: const Text(" Random"),
                   onTap: () {
                     Navigator.push(context,
@@ -124,6 +126,22 @@ class _DrawerScreenState extends State<DrawerScreen> {
                         MaterialPageRoute(builder: (context) => const Stockscreen()));
                   },
                 ),
+                ListTile(
+                  leading: const Icon(Icons.map),
+                  title: const Text("Location"),
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MapPage(title: 'Location',)));
+                  },
+                ),
+                // ListTile(
+                //   leading: const Icon(Icons.question_mark),
+                //   title: const Text("Check"),
+                //   onTap: () {
+                //     Navigator.push(context,
+                //         MaterialPageRoute(builder: (context) =>const SplashScreen()));
+                //   },
+                // ),
               ],
             ),
           )),

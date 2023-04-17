@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gypsybee/data/service/bloc/service_bloc.dart';
 import 'package:gypsybee/module/new.dart';
@@ -55,7 +55,7 @@ class ServicescreenState extends State<Servicescreen> {
                     crossAxisCount: 4,
                     childAspectRatio: MediaQuery.of(context).size.width /
                     (MediaQuery.of(context).size.height / 2),
-                    ),
+                    ),                                 
                   itemBuilder: (BuildContext context, int index) { 
                    return InkWell(
                      onTap: (){ 
@@ -65,7 +65,7 @@ class ServicescreenState extends State<Servicescreen> {
                          backgroundColor: Colors.white,
                          shape: RoundedRectangleBorder(
                              borderRadius: BorderRadius.circular(10.0),
-                           ),
+                           ),                         
                          builder: (context) => SizedBox(
                           height: 500,
                            child: Searchservice(
@@ -82,7 +82,7 @@ class ServicescreenState extends State<Servicescreen> {
                        subject: (state.servicemodel.response![index].value).toString(),
                        id: (state.servicemodel.response![index].id).toString()
                      )
-                    );
+                  );
                 }),
               );
               } else {
@@ -102,7 +102,7 @@ class ServicescreenState extends State<Servicescreen> {
             BottomNavigationBarItem(
                 icon: InkWell(onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Newscreen()));
+                      MaterialPageRoute(builder: (context) => const Newscreen()));
                 },child: const Icon(Icons.search),),
                 label: 'Job Search', 
                 backgroundColor: const Color.fromARGB(255, 18, 112, 189),
@@ -123,7 +123,8 @@ class ServicescreenState extends State<Servicescreen> {
               icon: Icon(Icons.settings),
               label: 'Services',
             ),
-          ]),
+          ]
+        ),
     );
   }
 }

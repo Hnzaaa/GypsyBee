@@ -49,13 +49,18 @@ class ServiceWidget{
   }){
     return Column(
       children: [
-        Container(// ignore: sized_box_for_whitespace
+        Container( 
             height: 60,
-            width: 60,color: const Color.fromARGB(255, 193, 220, 241),
+            width: 60,
+            color: const Color.fromARGB(255, 193, 220, 241),
             child: Image.network( icon, fit: BoxFit.contain,
             ),
           ),
-        Text(subject, overflow: TextOverflow.ellipsis,style: const TextStyle(color: Color.fromARGB(255, 17, 95, 158),fontSize: 15, ))
+        Text(subject, 
+        overflow: TextOverflow.ellipsis,
+        style: const TextStyle(
+            color: Color.fromARGB(255, 17, 95, 158),fontSize: 15, )
+          )
       ],
     );
   }
@@ -78,4 +83,11 @@ class Cosmeticwidget{
     );
   }
 }
- 
+
+class Checkwidget{
+  Widget checkwidget({
+       String? id,
+  }){
+    return Container();
+  }
+}

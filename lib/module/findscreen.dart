@@ -26,7 +26,6 @@ class FindvendorScreenState extends State<Findvendor> {
       return SizedBox(height: height);
     }
 
-
     return Scaffold(
           appBar: AppBar(
             title: const Text(
@@ -145,12 +144,12 @@ class FindvendorScreenState extends State<Findvendor> {
                                         ),
                                       ],
                                     ),
-                                 ],
-                              );
-                            }, 
-                          ),
-                        ),
-                      ),
+                                  ],
+                               );
+                              }, 
+                           ),
+                         ),
+                       ),
                         const CircleAvatar( 
                                radius: 35,
                         ), 

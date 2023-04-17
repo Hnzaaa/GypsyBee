@@ -51,9 +51,11 @@ DrinksBloc newbloc = DrinksBloc();
                       title: (state.drinksmodel.drinks![index].strDrink).toString(),
                       brand: (state.drinksmodel.drinks![index].strGlass).toString(),
                       price: (state.drinksmodel.drinks![index].idDrink).toString()),
-                );
-              },
-            ); }else {
+                  );
+                },
+              ); 
+            }
+            else {
               return const Center(
                 child: CircularProgressIndicator(
                   strokeWidth: 0.8,

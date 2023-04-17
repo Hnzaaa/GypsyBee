@@ -4,6 +4,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:gypsybee/module/categoryscreen.dart';
+import 'package:gypsybee/module/leaderboard.dart';
 
 import 'drawerscreen.dart';
 
@@ -148,14 +149,23 @@ class _MyHomePageState extends State<MyHomePage> {
                   textAlign: TextAlign.left,
                 ),
                 spacer(height: 8),
-                Text(
-                  'CLOTHES',
-                  style: GoogleFonts.archivo(
-                    color: Colors.white,
-                    fontSize: 50,
-                    fontWeight: FontWeight.w900,
+                InkWell(
+                  child: Text(
+                    'CLOTHES',
+                    style: GoogleFonts.archivo(
+                      color: Colors.white,
+                      fontSize: 50,
+                      fontWeight: FontWeight.w900,
+                    ),
+                    textAlign: TextAlign.left,
                   ),
-                  textAlign: TextAlign.left,
+                  onTap: () => {
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (
+                      context)=> const Leadershipscreen()
+                     ) 
+                   )   
+                  },
                 ),
                 spacer(height: 18),
                 ElevatedButton(

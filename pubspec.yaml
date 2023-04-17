@@ -32,8 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   dots_indicator: ^2.1.0
-  google_sign_in_web: ^0.11.0   
-  bottom_drawer: ^0.0.5
+  google_sign_in_web: ^0.12.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -47,8 +46,11 @@ dependencies:
   equatable: ^2.0.5
   bloc: ^8.1.1
   flutter_bloc: ^8.1.2
-  modal_bottom_sheet: ^2.1.2
   fluttertoast: ^8.2.1
+  google_nav_bar: ^5.0.6
+  line_icons: ^2.0.1
+  shared_preferences: ^2.1.0
+  modal_bottom_sheet: ^3.0.0-pre
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +62,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  google_maps_flutter: ^2.2.5
+  geolocator: ^9.0.2
+  geolocator_android: ^4.1.7
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
