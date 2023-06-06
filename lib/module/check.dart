@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gypsybee/module/homescreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:students_app_og/mainActivity.dart';
-// import 'package:students_app_og/myTheme/MyTheme.dart';
-// import 'mobile_auth.dart';
 
 
 class SplashScreen extends StatefulWidget{
@@ -31,14 +28,14 @@ class StateSplashScreen extends State<SplashScreen>{
 
      print('accessToken$accessToken');
      if(accessToken==null){
-       Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => const MyHomePage()));
+       Navigator.pushReplacement(
+        context, MaterialPageRoute(
+          builder: (BuildContext context) => const MyHomePage()));
      }else{
        Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => const MyHomePage()));
-     }
-
-
-
-    });
+     } 
+    }
+  );
     return Scaffold(
       body: Image.asset('assets/splash.jpeg',height: height,width: width,fit: BoxFit.fill,),
     );

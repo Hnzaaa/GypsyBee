@@ -44,10 +44,13 @@ class Stockscreenstate extends State<Stockscreen> {
                   itemCount: state.stockmodel.length,
                   itemBuilder: (context, index) {
                       return   ListTile(
-                      leading: Text(state.stockmodel[index].ticker.toString(),style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                      title: Text(state.stockmodel[index].industry.toString(),style: const TextStyle(fontSize:18),),
+                      leading: Text(state.stockmodel[index].ticker.toString(),style:
+                       const TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                      title: Text(state.stockmodel[index].industry.toString(),style: 
+                      const TextStyle(fontSize:18),),
                       subtitle: Text(state.stockmodel[index].sector.toString()),
-                      trailing: Text(state.stockmodel[index].party.toString(),style: const TextStyle(fontSize: 12),),
+                      trailing: Text(state.stockmodel[index].party.toString(),style:
+                       const TextStyle(fontSize: 12),),
                       );
                   }),
               ),

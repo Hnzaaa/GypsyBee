@@ -101,9 +101,10 @@ class ServicescreenState extends State<Servicescreen> {
         items:   <BottomNavigationBarItem>[
             BottomNavigationBarItem(
                 icon: InkWell(onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const Newscreen()));
-                },child: const Icon(Icons.search),),
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (context) => const Newscreen()));
+                },
+                child: const Icon(Icons.search),),
                 label: 'Job Search', 
                 backgroundColor: const Color.fromARGB(255, 18, 112, 189),
             ),

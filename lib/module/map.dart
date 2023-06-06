@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
  
@@ -5,6 +6,7 @@ class MapPage extends StatefulWidget {
 
   MapPage({super.key, required this.title, })  ; 
    String title;
+   
 
   @override
   MapPageState createState() => MapPageState();
@@ -12,6 +14,7 @@ class MapPage extends StatefulWidget {
 }
 
 class MapPageState extends State<MapPage> {
+  int visit = 0;
 //   Position? _position;
 //     Position? _initialPosition;
 
@@ -93,7 +96,17 @@ class MapPageState extends State<MapPage> {
 
 
   // Save position we get from the Geolocator stream in this variable
-    Position? _position;
+    Position? _position; 
+  
+ int _selectedIndex = 0;
+   
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });}
+
+
 
   @override
   void initState() {
@@ -131,6 +144,22 @@ class MapPageState extends State<MapPage> {
           ],
         ),
       ),
+
+             
+     bottomNavigationBar: Container(
+        height: 60,color: const Color.fromARGB(255, 26, 71, 85),
+        child: CurvedNavigationBar(
+            height: 50,
+            backgroundColor: const Color.fromARGB(255, 26, 71, 85),
+            color: const Color.fromARGB(255, 26, 71, 85),
+            buttonBackgroundColor: Colors.grey.shade300,
+            onTap: _onItemTapped,
+            items: const <Widget>[
+              Icon(Icons.home),
+              Icon(Icons.search),
+              Icon(Icons.settings),
+              Icon(Icons.person)
+            ]),)
     );
   }
 }

@@ -5,10 +5,10 @@ import 'package:gypsybee/module/drinksscreen.dart';
 import 'package:gypsybee/module/knotscreen.dart';
 import 'package:gypsybee/module/cosmeticscreen.dart';
 import 'package:gypsybee/module/map.dart';
+import 'package:gypsybee/module/new.dart';
 import 'package:gypsybee/module/servicesscreen.dart';
 import 'package:gypsybee/module/stockscreen.dart';
 import 'package:gypsybee/module/usdatascreen.dart';
-import 'check.dart';
 import 'gamescreen.dart';
 
 class DrawerScreen extends StatefulWidget {
@@ -134,14 +134,14 @@ class _DrawerScreenState extends State<DrawerScreen> {
                         MaterialPageRoute(builder: (context) => MapPage(title: 'Location',)));
                   },
                 ),
-                // ListTile(
-                //   leading: const Icon(Icons.question_mark),
-                //   title: const Text("Check"),
-                //   onTap: () {
-                //     Navigator.push(context,
-                //         MaterialPageRoute(builder: (context) =>const SplashScreen()));
-                //   },
-                // ),
+                ListTile(
+                  leading: const Icon(Icons.question_mark),
+                  title: const Text("Check"),
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) =>const TabBarExample()));
+                  },
+                ),
               ],
             ),
           )),

@@ -99,7 +99,7 @@ class LeadershipscreenState  extends State<Leadershipscreen>{
                          decoration: BoxDecoration(
                            borderRadius: BorderRadius.all(
                            Radius.circular(40)
-                          ),
+                           ),
                            border: Border.all(color: Colors.white),
                            shape: BoxShape.rectangle,
                            color: Colors.white),
@@ -151,8 +151,7 @@ class LeadershipscreenState  extends State<Leadershipscreen>{
                           ),
                         ),
                       ],
-                    ),
-                      
+                    ),   
                  ],
                 ),
               ),
